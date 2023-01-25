@@ -2,7 +2,7 @@
 A web application that allows users to search for movies using the OMDB API and view them using Thymeleaf.
 
 ## Description
-This project is a Spring Boot web application that allows users to search for movies using the OMDB API. The application allows users to search for movies by title, and displays the results in a list. Users can also view the details of a movie by clicking on it. The frontend of the application is built using Thymeleaf.
+This project is a Spring Boot web application that allows users to search for movies using the OMDB API. The application allows users to search for movies by title, and displays the results in a list. Users can also view the details of the movie like rating , genre, actor, director and many more. The frontend of the application is built using Thymeleaf.
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.

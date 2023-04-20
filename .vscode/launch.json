@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MovieApplication<Movie>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.niteshcodes.Movie.MovieApplication",
+            "projectName": "Movie",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

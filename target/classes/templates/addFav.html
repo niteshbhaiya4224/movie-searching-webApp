@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/fav.css}" />
+    <title>Favourite</title>
+
+    <script>
+        function meth(){
+            window.location.href="/delete";
+        }
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <center><h1>Your Favourite Movies</h1></center>
+    </div>
+
+    <!-- Movie cards -->
+    <div class="box1">
+      <div th:each="url: ${favMovies}">
+        <img alt="Poster" width="300" height="450" th:src="${url.posterUrl}" />
+        <div class="button-container">
+            <button type="submit" onclick="meth()" class="button-primary">Delete</button>
+        </div>
+        <hr>
+     </div>
+    </div>
+  </body>
+</html>
+

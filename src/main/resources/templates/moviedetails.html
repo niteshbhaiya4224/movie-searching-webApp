@@ -1,68 +1,86 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css}"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Movie Search Results</title>
-</head>
-<body>
-  
-  <section class="text-white body-font overflow-hidden w-screen h-screen "  style="background-image: url(https://cdn.pixabay.com/photo/2015/10/15/21/09/texture-990071_1280.jpg);">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <title>Movie DB</title>
+
+    <script>
+      function meth(){
+        window.location.href = '/extract';
+      }
+    </script>
+  </head>
+
+  <body>
+    <section
+      class="section"
+      style="
+        background-image: url(https://cdn.pixabay.com/photo/2015/10/15/21/09/texture-990071_1280.jpg);
+      "
+    >
       <!-- Searching section  -->
-  <form class="flex justify-center pt-8 text-black" th:action="@{/search}" th:method="get">
-    <input class="text-center rounded-full mr-4 outline-none w-80" type="text" name="title" placeholder="Enter movie title">
-    <input class="cursor-pointer bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg inline-flex items-center" type="submit" value="Search">
-</form>
+      <form class="form" th:action="@{/search}" th:method="get">
+        <input type="text" name="title" placeholder="Enter movie title" />
+        <input class="submit" type="submit" value="Search" />
+      </form>
 
-
-  <!-- card section  -->
-  <div class="container px-2 py-12 mx-auto">
-    <div th:each="movie: ${movies}" >
-      <div class="lg:w-4/5 mx-auto flex flex-wrap">
-        <img alt="Poster" class="rounded-md shadow-2xl" width="300" height="450" th:src="${movie.posterUrl}" />
-        <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-          <h2 class="text-sm title-font text-gray-500 tracking-widest" th:text="${movie.genre}"></h2>
-          <h1 class="text-white text-3xl title-font font-medium mb-1" th:text="${movie.title}" ></h1>
-          <div class="flex mb-4">
-            <span class="flex items-center font-bold"><p>
-              Rating : &nbsp;
-            </p>
-              <span th:text=" ${movie.rating}"></span>
-              <span class="flex ml-3 pl-3 py-2 border-l-2 border-gray-800 text-white space-x-2">
-              <span class="ml-3" th:text="${movie.votes}" ></span>
-              <span class="font-bold">&nbsp;Votes</span>
-            </span>
-            <span class="flex ml-3 pl-3 py-2 border-l-2 border-gray-800 text-white space-x-2">
-              <a>
-                <p th:text=" ${movie.releaseYear}"></p>
-              </a>
-            </span>
+      <!-- card section  -->
+        <div class="container" th:if="${movies != null}">
+          <div class="box1">
+            <img alt="Poster" width="300" height="450" th:src="${movies.posterUrl}" />
           </div>
-          <p class="leading-relaxed" th:text="${movie.overview}"></p>
-          <div class="flex mt-6 items-center pb-5 ">
-            <div class="flex">
-              <span class="mr-3 font-bold">Director &nbsp;</span>
-              <p th:text="${movie.director}"></p>
+
+          <div class="box2">
+            <div class="genre">
+              <div th:text="${movies.genre}"></div>
+            </div>
+            <div class="title">
+              <div th:text="${movies.title}"></div>
+            </div>
+            <div class="rating">
+              Rating : &nbsp;
+              <span th:text=" ${movies.rating}"></span>
+              <span class="separator"></span>
+              <span class="votes" th:text="${movies.votes}"></span>
+              <span class="votes">&nbsp;Votes</span>
+              <span class="separator"></span>
+              <span class="year" th:text=" ${movies.releaseYear}"></span>
+            </div>
+
+            <div class="overview">
+              <p class="tenth leading-relaxed" th:text="${movies.overview}"></p>
+            </div>
+
+            <div class="director">
+              <span class="drct">Director &nbsp;</span>
+                <span th:text="${movies.director}"></span>
+            </div>
+
+            <div class="actor">
+              <span class="star">Starring &nbsp;</span>
+              <span th:text="${movies.actor}"></span>
+            </div>
+
+            <div class="lang">
+              <span class="language">Language &nbsp;</span>
+              <span th:text="${movies.language}"></span>
+            </div>
+
+
+            <!-- buttons -->
+
+            <div class="button-container">
+                <form th:action="@{/addFav}" method="post">
+                  <button type="submit" class="button-primary">Favourite</button>
+                </form>
+                <button onclick="meth()" class="button-secondary">View Favourite</button>
             </div>
           </div>
-          <div class="flex items-center pb-5">
-            <span class="mr-3 font-bold ">Starring &nbsp;</span>
-            <p th:text="${movie.actor}"></p>
-          </div>
-
-          <div class="flex">
-           <span class="font-bold">Language &nbsp;</span>
-           <span th:text="${movie.language}"></span>
-            
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-  </section>
-</body>
+    </section>
+  </body>
 </html>

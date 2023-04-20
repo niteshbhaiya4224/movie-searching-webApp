@@ -1,6 +1,22 @@
 package com.niteshcodes.Movie.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Data
+@Entity
+@ToString
+@NoArgsConstructor
 public class Movie {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     private String title;
     private String rating;
     private String overview;
@@ -12,12 +28,6 @@ public class Movie {
     private String director;
     private String language;
 
-    @Override
-    public String toString() {
-        return "Movie [title=" + title + ", rating=" + rating + ", overview=" + overview + ", releaseYear="
-                + releaseYear + ", posterUrl=" + posterUrl + ", votes=" + votes + ", genre=" + genre + ", actor="
-                + actor + ", director=" + director + ", language=" + language + "]";
-    }
 
 
     // Constructor
@@ -34,67 +44,4 @@ public class Movie {
         this.language = language;
     }
 
-
-    // Getters and Setters
-    public String getTitle() {
-        return title;
-    }
-    public void setTitle(String title) {
-        this.title = title;
-    }
-    public String getRating() {
-        return rating;
-    }
-    public void setRating(String rating) {
-        this.rating = rating;
-    }
-    public String getOverview() {
-        return overview;
-    }
-    public void setOverview(String overview) {
-        this.overview = overview;
-    }
-    public String getReleaseYear() {
-        return releaseYear;
-    }
-    public void setReleaseYear(String releaseYear) {
-        this.releaseYear = releaseYear;
-    }
-    public String getPosterUrl() {
-        return posterUrl;
-    }
-    public void setPosterUrl(String posterUrl) {
-        this.posterUrl = posterUrl;
-    }   
-    public String getVotes() {
-        return votes;
-    }
-    public void setVotes(String votes) {
-        this.votes = votes;
-    }
-
-    public String getActor() {
-        return actor;
-    }
-    public void setActor(String actor) {
-        this.actor = actor;
-    }
-    public String getDirector() {
-        return director;
-    }
-    public void setDirector(String director) {
-        this.director = director;
-    }
-    public String getGenre() {
-        return genre;
-    }
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-    public String getLanguage() {
-        return language;
-    }
-    public void setLanguage(String language) {
-        this.language = language;
-    }
 }

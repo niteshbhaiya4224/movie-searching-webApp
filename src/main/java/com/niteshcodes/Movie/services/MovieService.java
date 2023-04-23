@@ -20,8 +20,6 @@ import com.niteshcodes.Movie.repository.MainRepository;
 public class MovieService{
     private final RestTemplate restTemplate = new RestTemplate();
 
-    // List<Movie> movies = new ArrayList<>(); 
-
     Movie movie;
 
     @Autowired
@@ -71,5 +69,9 @@ public class MovieService{
         }
         return urls;
     }
+
+    // public void deleteMovie(Movie movie){
+    //     repository.delete(movie);
+    // }
 
 }

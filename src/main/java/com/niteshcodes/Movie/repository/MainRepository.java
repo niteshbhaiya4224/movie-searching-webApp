@@ -7,5 +7,5 @@ import com.niteshcodes.Movie.entities.Movie;
 
 @Repository
 public interface MainRepository extends JpaRepository<Movie,Long> {
-    
+
 }

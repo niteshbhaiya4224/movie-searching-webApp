@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.niteshcodes.Movie.entities.Movie;
+import com.niteshcodes.Movie.repository.MainRepository;
 import com.niteshcodes.Movie.services.MovieService;
 
 
@@ -19,6 +20,9 @@ import com.niteshcodes.Movie.services.MovieService;
 public class MainController {
     @Autowired
     MovieService movieService;
+
+    @Autowired
+    MainRepository mainRepository;
     
     @GetMapping("/")
     public String homeController(){
@@ -45,8 +49,10 @@ public class MainController {
         return "addFav";
     }
 
-    @GetMapping("/delete")
-    public String deleteFav(){
-        return "delete";
-    }
+    @PostMapping("/delete")
+    public String deleteMovie(@RequestParam("movieId") Long movieId) {
+    mainRepository.deleteById(movieId);
+    return "addFav";
+}
+
 }

@@ -6,12 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" th:href="@{/fav.css}" />
     <title>Favourite</title>
-
-    <script>
-        function meth(){
-            window.location.href="/delete";
-        }
-    </script>
   </head>
   <body>
     <div class="header">
@@ -20,14 +14,34 @@
 
     <!-- Movie cards -->
     <div class="box1">
-      <div th:each="url: ${favMovies}">
-        <img alt="Poster" width="300" height="450" th:src="${url.posterUrl}" />
+      <div th:each="movie: ${favMovies}">
+        <img alt="Poster" width="300" height="450" th:src="${movie.posterUrl}" />
         <div class="button-container">
-            <button type="submit" onclick="meth()" class="button-primary">Delete</button>
+            <button type="submit" th:attr="data-movie-id=${movie.id}" onclick="deleteMovie(this)" class="button-primary">Delete</button>
         </div>
         <hr>
      </div>
     </div>
+
+    <script>
+      function deleteMovie(button) {
+        // Get the movie ID from the data-movie-id attribute
+        var movieId = button.getAttribute("data-movie-id");
+        
+        // Send a POST request to delete the movie
+        fetch("/delete?movieId=" + movieId, {
+          method: "POST"
+        })
+        .then(response => {
+          if (response.ok) {
+            // Reload the page to show the updated movie list
+            location.reload();
+          } else {
+            console.error("Failed to delete movie");
+          }
+        })
+        .catch(error => console.error(error));
+      }
+    </script>
   </body>
 </html>
-

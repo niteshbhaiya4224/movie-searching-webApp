@@ -64,11 +64,13 @@
           </div>
         </div>
 
+        <div th:if="${movies != null}">
           <div class="button-container">
             <form th:action="@{/addFav}" method="post">
               <button type="submit" class="button-primary">Favourite</button>
             </form>
             <button onclick="meth()" class="button-secondary">View Favourite</button>
+        </div>
         </div>
 </body>
 </html>

@@ -70,8 +70,4 @@ public class MovieService{
         return urls;
     }
 
-    // public void deleteMovie(Movie movie){
-    //     repository.delete(movie);
-    // }
-
 }

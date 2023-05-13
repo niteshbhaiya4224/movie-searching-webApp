@@ -3,24 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" th:href="@{/style.css}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="stylesheet" th:href="@{/style.css}" />
     <title>Movie DB</title>
 
     <script>
       function meth(){
         window.location.href = '/extract';
       }
-    </script>
+</script>
   </head>
 
-  <body>
+  <body style="
+  background-image: url(https://cdn.pixabay.com/photo/2015/10/15/21/09/texture-990071_1280.jpg);
+">
+
     <section
       class="section"
-      style="
-        background-image: url(https://cdn.pixabay.com/photo/2015/10/15/21/09/texture-990071_1280.jpg);
-      "
     >
       <!-- Searching section  -->
       <form class="form" th:action="@{/search}" th:method="get">

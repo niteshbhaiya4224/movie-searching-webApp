@@ -14,6 +14,10 @@ import com.niteshcodes.Movie.entities.Movie;
 import com.niteshcodes.Movie.repository.MainRepository;
 import com.niteshcodes.Movie.services.MovieService;
 
+import jakarta.servlet.http.HttpServletRequest;
+
+// import jakarta.servlet.http.HttpServletRequest;
+
 
 
 @Controller
@@ -23,17 +27,25 @@ public class MainController {
 
     @Autowired
     MainRepository mainRepository;
-    
+
     @GetMapping("/")
-    public String homeController(){
-        return "moviedetails"; 
+    public String home(HttpServletRequest request) {
+        if(request.getHeader("User-Agent").contains("Mobile")) {
+            return "mobile";
+        } else {
+            return "moviedetails";
+        }
     }
 
     @GetMapping("/search")
-    public String getMovieByName(@RequestParam(name="title") String title, Model model) throws IOException {
+    public String getMovieByName(HttpServletRequest request ,@RequestParam(name="title") String title, Model model) throws IOException {
         Movie movie = movieService.getMovieByName(title);
         model.addAttribute("movies", movie);
-        return "moviedetails";
+        if(request.getHeader("User-Agent").contains("Mobile")) {
+            return "mobile";
+        } else {
+            return "moviedetails";
+        }
     }
 
     @PostMapping("/addFav")

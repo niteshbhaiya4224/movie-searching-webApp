@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/mobile.css}" />
+    <title>Movie DB</title>
+    <script>
+      function meth(){
+        window.location.href = '/extract';
+      }
+</script>
+</head>
+<body>
+     <!-- Searching section  -->
+     <form class="form" th:action="@{/search}" th:method="get">
+        <input type="text" name="title" placeholder="Enter movie or series" />
+        <input class="submit" type="submit" value="Search" />
+      </form>
+
+    <div th:if="${movies != null}">
+            <div class="card">
+              <img alt="Poster" th:src="${movies.posterUrl}" />
+            </div>
+            <div class="box1">
+                <h2 th:text="${movies.title}"></h2>
+            </div>
+
+            <div class="container">
+            <div class="genre" >
+              Genre &nbsp; <span class = "text" th:text="${movies.genre}"></span>
+            </div>
+            <div class="box2">
+              Overview &nbsp; <p class="text" th:text="${movies.overview}" style="display:inline;"></p>
+            </div>
+
+            <div class="rating">
+              Rating : &nbsp;
+              <span class="text" th:text=" ${movies.rating}"></span>
+              <span class="separator"></span>
+              <span class="votes" th:text="${movies.votes}"></span>
+              <span class="text">&nbsp;Votes</span>
+              <span class="separator"></span>
+            </div>
+            <div class="rating">
+              ReleaseYear &nbsp; <span class="text" th:text=" ${movies.releaseYear}"></span>
+            </div>
+
+            <div class="rating">
+              <span>Director &nbsp;</span>
+                <span class="text" th:text="${movies.director}"></span>
+            </div>
+
+            <div class="rating">
+              <span>Starring &nbsp;</span>
+              <span class="text" th:text="${movies.actor}"></span>
+            </div>
+
+            <div class="rating">
+              <span >Language &nbsp;</span>
+              <span class="text" th:text="${movies.language}"></span>
+            </div>
+          </div>
+        </div>
+
+        <div th:if="${movies != null}">
+          <div class="button-container">
+            <form th:action="@{/addFav}" method="post">
+              <button type="submit" class="button-primary">Favourite</button>
+            </form>
+            <button onclick="meth()" class="button-secondary">View Favourite</button>
+        </div>
+        </div>
+</body>
+</html>

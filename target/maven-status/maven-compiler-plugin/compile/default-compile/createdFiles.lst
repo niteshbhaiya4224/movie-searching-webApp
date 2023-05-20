@@ -1,0 +1,6 @@
+com\niteshcodes\Movie\MovieApplication.class
+com\niteshcodes\Movie\entities\Movie.class
+com\niteshcodes\Movie\repository\MainRepository.class
+com\niteshcodes\Movie\configuration\MyConfig.class
+com\niteshcodes\Movie\services\MovieService.class
+com\niteshcodes\Movie\controller\MainController.class

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/fav.css}" />
+    <title>Favourite</title>
+  </head>
+  <body>
+    <div class="header">
+      <center><h1>Your Favourite Movies</h1></center>
+    </div>
+
+    <!-- Movie cards -->
+    <div class="box1">
+      <div th:each="movie: ${favMovies}">
+        <img alt="Poster" width="300" height="450" th:src="${movie.posterUrl}" />
+        <div class="button-container">
+            <button type="submit" th:attr="data-movie-id=${movie.id}" onclick="deleteMovie(this)" class="button-primary">Delete</button>
+        </div>
+        <hr>
+     </div>
+    </div>
+
+    <script>
+      function deleteMovie(button) {
+        // Get the movie ID from the data-movie-id attribute
+        var movieId = button.getAttribute("data-movie-id");
+        
+        // Send a POST request to delete the movie
+        fetch("/delete?movieId=" + movieId, {
+          method: "POST"
+        })
+        .then(response => {
+          if (response.ok) {
+            // Reload the page to show the updated movie list
+            location.reload();
+          } else {
+            console.error("Failed to delete movie");
+          }
+        })
+        .catch(error => console.error(error));
+      }
+    </script>
+  </body>
+</html>

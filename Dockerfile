@@ -11,4 +11,4 @@ FROM openjdk:17-jdk-alpine3.14
 WORKDIR /app
 COPY --from=build /app/target/Movie-0.0.1-SNAPSHOT.jar .
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "Movie-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "login-0.0.1-SNAPSHOT.jar"]

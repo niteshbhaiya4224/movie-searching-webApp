@@ -10,10 +10,9 @@
     <script>
       function meth(){
         window.location.href = '/extract';
-      }
+      }  
 </script>
   </head>
-
   <body style="
   background-image: url(https://cdn.pixabay.com/photo/2015/10/15/21/09/texture-990071_1280.jpg);
 ">
@@ -73,9 +72,9 @@
             <!-- buttons -->
 
             <div class="button-container">
-                <form th:action="@{/addFav}" method="post">
-                  <button type="submit" class="button-primary">Favourite</button>
-                </form>
+              <form th:action="@{/addFav}" method="post">
+                <button type="submit" class="button-primary">Favourite</button>
+              </form>
                 <button onclick="meth()" class="button-secondary">View Favourite</button>
             </div>
           </div>

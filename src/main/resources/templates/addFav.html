@@ -11,36 +11,60 @@
     <div class="header">
       <center><h1>Your Favourite Movies</h1></center>
     </div>
-
+    <div class="content">
+      <div id="notification-container"></div>
+    </div>
     <!-- Movie cards -->
     <div class="box1">
       <div th:each="movie: ${favMovies}">
-        <img alt="Poster" width="300" height="450" th:src="${movie.posterUrl}" />
+        <img
+          alt="Poster"
+          width="300"
+          height="450"
+          th:src="${movie.posterUrl}"
+        />
         <div class="button-container">
-            <button type="submit" th:attr="data-movie-id=${movie.id}" onclick="deleteMovie(this)" class="button-primary">Delete</button>
+          <button
+            type="submit"
+            th:attr="data-movie-id=${movie.id}"
+            onclick="deleteMovie(this)"
+            class="button-primary"
+          >
+            Delete
+          </button>
         </div>
-        <hr>
-     </div>
+        <hr />
+      </div>
     </div>
 
+
     <script>
+      function deletedSuccessFully(message) {
+        const notification = document.createElement("div");
+        notification.classList.add("notification", "success");
+        notification.textContent = message;
+        const container = document.getElementById("notification-container");
+        container.appendChild(notification);
+        const duration = 3000;
+        setTimeout(() => {
+          container.removeChild(notification);
+        }, duration);
+      }
+
       function deleteMovie(button) {
-        // Get the movie ID from the data-movie-id attribute
         var movieId = button.getAttribute("data-movie-id");
-        
-        // Send a POST request to delete the movie
         fetch("/delete?movieId=" + movieId, {
-          method: "POST"
+          method: "POST",
         })
-        .then(response => {
-          if (response.ok) {
-            // Reload the page to show the updated movie list
-            location.reload();
-          } else {
-            console.error("Failed to delete movie");
-          }
-        })
-        .catch(error => console.error(error));
+          .then((response) => {
+            if (response.ok) {
+              location.reload();
+              deletedSuccessFully("Deleted successfully!");
+            } else {
+              deletedSuccessFully("Failed to delete...");
+            }
+          })
+          .catch((error) => console.error(error));
       }
     </script>
   </body>

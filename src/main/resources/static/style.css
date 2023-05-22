@@ -190,4 +190,17 @@ input[type="text"]:focus {
   .button-secondary:hover {
     background-color: #2cbd0f;
   }
+  #notification-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+  }
   
+  .notification {
+    background-color: black;
+    color: #E50914;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+  }

@@ -8,14 +8,17 @@ This project is a Spring Boot web application that allows users to search for mo
 
 ## Sample ScreenShot
 
-![image1](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTZLVd3seAzv5QicqodkcMLQYIi4ZBWhqHfaEI3-55laC_Z9f91s5VhgvwnCk1D4JTG_3NJcGjG0WAv85XhRvLPJmPLUbE2rWWwpFe51e4Mmu7PukSMw7SITnqpDLfdqOfyxAQDM61MetSB-dYBSg5KxUS8D0r0V5D_GwE8eUz3rh48de8ojjJmg/s1600/screenshot1.png)
+![image1](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj9ZJwmdr1eDJzPFCgHGY9iyNfSWoUvtCw2RecaYacGXTBlL1O2qJkAU_urJ16X9HRjXVV2oz4VOwqqx5LrvnDWXB-pkfcdfirlNFClzydebep9OFCt_9pa5Lst9VB3srGJgl1fpWOn2fvjy3MMWWsyvcaz2-GaF1fb-xXtK-m6m7wxAjreWV_j72md/s1920/Movie%20DB%20-%20Google%20Chrome%2009-12-2023%2023_13_44.png)
 
-![image2](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj9e0_-jrP-gHYmywvoZXqIIS3lqTyMMEBy9gRewWDdrimltyRrYsxDEjWaOWS_Y5D7hkx5TCoDyScs20JU_puClTdPxo3AJVSU7vd32vVpvkym6rKKzoTAmkneob0qkKoGygAaQXoCOVOEXs0XT60aWaWR4d_WuXyyZOMVEDYGtM-ndRozUNJHsw/s1600/screenshot2.png)
+![image2](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjG2XRGQ_aa6gPpkc_Q3JKA6qIPmx_VtS0uLYygX4wbDiTA9no2iOhRLGXCsrlwO-yunYRMtRQ1D6iEB41mgO7OGHHqtpR88mBpdeHRG8RkK2Q_WNQ7VN-nhDKzCbzLPZjDr5q99xphOO7_qIhzQItH_CGp1J7IsPDmQdKTCR2DFinpYDE86KIrGt4A/s16000/Movie%20DB%20-%20Google%20Chrome%2009-12-2023%2023_15_25.png)
 
-![image3](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7OFi7JDeFQeZAhewDOTbcD4l2dr-aeWVxmt7Ob5aeNZmC_tWzxT7t4B0xqkGeMZk7gLcIFGkwNXwC9kdJT795GwVyaOF56dIKe1q-RsKKHyMiShU3PDOyMCa9qKIUTzQ1busa7cFXZwimeSGyarAq3v96eV3JOJ9FYBeSQ70J6SqUW9ZZ5sMhLw/s1600/screenshot3.png)
+![image3](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJA6hfdJZ9poK1VKBvD2iormqoDwz-_P5oAMH1WrGesVgXy1E1itciikmKEqSozmlPKI_m6LaW10KHJPRufldE5g9wNhHvruT1mr-ttDoG2xF0Wm2HB7wjIGCcO1EEnHbHF6YNXnscKGsbhLkxETJeP8CUjUN07oqBKDHGNBT2lc1401U7Efeq1QTr/s16000/Movie%20DB%20-%20Google%20Chrome%2009-12-2023%2023_15_35.png)
 
-![image4](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRW5catEe8llMa3I-Rn8wOg722W_CzH4HmffXDc6DhX-2jhlsby6WD0mLZvTskThR-xNKehgUYyHZS9ItE3lExDZlDzgok9BbT_TPtnBB-E4lbDJcV48oXLb3CIGOX-SC4oJ8Pj297BQYRdU6F4zgXo_w2kUQkKmStSN-PkK8PjeEBLNogevqsjQ/s1600/screenshot4.png)
- 
+![image4](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhk7_4x4hFU5sZ5-rHv1Dn13gR6ULBvKfgE53RqyhkEzXsrg7eY2ugy9ENPUIgj-WgT_a2r5ICMH38aQwLODHq_Jl-1EzG1cublzhOjhhk2synFC7kZpY-YQfzmg0NyoolQxuLeRFASW-SM43WZX9byyvQGDuz0Vx36XP7ZEPU4a58auiU7y7lBNH9q/s16000/Movie%20DB%20-%20Google%20Chrome%2009-12-2023%2023_15_44.png)
+
+![image5](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRN3Q9f8lrfizsCyDBz2PekzcIuh4vUgdY_JM0-1bMpEInen2jy8llcHbug4S-12scp0slTRaiiyCv8TwOUcMcrEEwExmNl0ZiM6UCxXkuV_cVYUXz-dQOecWhmqQMn8uishj46iVjatOpKE7rPLN9WEE9osU8eXPcCgfq2FwWf9oOjlYA9iAkJiYJ/s16000/Movie%20DB%20-%20Google%20Chrome%2009-12-2023%2023_15_54.png)
+
+![image6](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhE4gWBSI7VcBIAJzO6WZHNmQx1Tl_DunX0BAI3EhbQ5a5FFlCTNtiGduvFuugzpoC2o52hxl6gP_b1FDCVe8rwz9BfzDn2EB8zcJkly0PqNHFxEDJVtTs1ptPCEFInLvtDA4Jq76t_dbLYZBVVe_48T31byDqjjpzakiy-e-18qo1c5srOkzCW3wQe/s16000/Movie%20DB%20-%20Google%20Chrome%2009-12-2023%2023_16_08.png)
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
